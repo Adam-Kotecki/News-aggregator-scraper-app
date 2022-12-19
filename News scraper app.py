@@ -12,9 +12,9 @@ root = tk.Tk()
 
 root.geometry('400x500')
 root.resizable(False, False)
-root.title('Scrapper')
+root.title('Scraping news app')
 
-image1 = Image.open("scrapper_image.png")
+image1 = Image.open("scraping news.png").resize((400, 100))
 test = ImageTk.PhotoImage(image1)
 
 label1 = ttk.Label(image=test)
@@ -209,7 +209,7 @@ def scrapp():
     def write_content(content):
         ind = 1
         username = os.environ.get('USER', os.environ.get('USERNAME'))
-        with open('C:\\Users\\' + username + '\\Desktop\\Daily content.txt', 'w') as f:
+        with open('C:\\Users\\' + username + '\\Desktop\\' + file_name.get() + '.txt', 'w') as f:
             for dict in content:
                 f.write(str(ind) + ". " + str(dict['title']) + " |votes: " + str(dict['votes']) + "|  " + str(dict['link']) + '\n' )
                 ind = ind + 1
@@ -218,10 +218,10 @@ def scrapp():
     tk.messagebox.showinfo(message="Completed")
     
 
-button1 = tk.Button(root, text="OK", command=lambda: scrapp(), width=10, bg="blue", fg="white", font=("ariel", 16, "bold") )
-button1.place(x=5, y=450)
+button1 = tk.Button(root, text="OK", command=lambda: scrapp(), width=10, bg="blue4", fg="white", font=("ariel", 12, "bold") )
+button1.place(x=5, y=460)
 
-button2 = tk.Button(root, text="Clear", command=lambda: clear(), width=10, bg="blue", fg="white", font=("ariel", 16, "bold") )
-button2.place(x=255, y=450)
+button2 = tk.Button(root, text="Clear", command=lambda: clear(), width=10, bg="blue4", fg="white", font=("ariel", 12, "bold") )
+button2.place(x=285, y=460)
 
 root.mainloop()
