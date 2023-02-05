@@ -9,5 +9,5 @@ This is the web scraping project. User can select one of two online content aggr
 
 ## Technologies
 Project is created with:
-* Selenium
+* Beautiful Soup
 * Tkinter
